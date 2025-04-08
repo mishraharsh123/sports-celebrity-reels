@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import { v4 as uuidv4 } from 'uuid';
-import { generateAthleteBiographyScript, generateImagePrompts } from '@/lib/ai/openai';
-import { textToSpeech } from '@/lib/aws/polly';
-import { uploadToS3 } from '@/lib/aws/s3';
+// import { generateAthleteBiographyScript, generateImagePrompts } from '@/lib/ai/openai';
+// import { textToSpeech } from '@/lib/aws/polly';
+// import { uploadToS3 } from '@/lib/aws/s3';
 import { reels } from '@/lib/mockData';
 
 // Sports-specific video URLs for reels (using sample videos)
