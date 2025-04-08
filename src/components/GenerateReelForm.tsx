@@ -180,7 +180,7 @@ export default function GenerateReelForm({ onGenerate, onClose }: GenerateReelFo
                   <div className="bg-blue-500/20 p-1 rounded mr-2 mt-0.5">
                     <FaMagic className="text-blue-400" size={14} />
                   </div>
-                  <span>An engaging script about {athleteName}'s career highlights</span>
+                  <span>An engaging script about {athleteName}&apos;s career highlights</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-purple-500/20 p-1 rounded mr-2 mt-0.5">

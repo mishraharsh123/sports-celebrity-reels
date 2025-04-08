@@ -1,5 +1,5 @@
 import { S3Client } from '@aws-sdk/client-s3';
-// import { Upload } from '@aws-sdk/lib-storage';
+import { Upload } from '@aws-sdk/lib-storage';
 
 // Initialize S3 client
 export const s3Client = new S3Client({
@@ -12,27 +12,27 @@ export const s3Client = new S3Client({
 
 // Upload file to S3
 export async function uploadToS3(
-  file: Buffer, 
-  fileName: string, 
+  file: Buffer,
+  fileName: string,
   contentType: string,
   folder: string = 'videos'
 ) {
   try {
     const key = `${folder}/${fileName}`;
-    
-    // const upload = new Upload({
-    //   client: s3Client,
-    //   params: {
-    //     Bucket: process.env.S3_BUCKET_NAME || 'sports-celebrity-reels',
-    //     Key: key,
-    //     Body: file,
-    //     ContentType: contentType,
-    //     ACL: 'public-read',
-    //   },
-    // });
 
-    // const result = await upload.done();
-    
+    const upload = new Upload({
+      client: s3Client,
+      params: {
+        Bucket: process.env.S3_BUCKET_NAME || 'sports-celebrity-reels',
+        Key: key,
+        Body: file,
+        ContentType: contentType,
+        ACL: 'public-read',
+      },
+    });
+
+    await upload.done();
+
     return {
       success: true,
       url: `https://${process.env.S3_BUCKET_NAME}.s3.amazonaws.com/${key}`,

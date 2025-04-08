@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { FaPlus, FaSearch, FaHome, FaUserCircle, FaBell, FaSignOutAlt, FaShare } from 'react-icons/fa';
+import { FaPlus, FaSearch, FaHome, FaUserCircle, FaBell, FaShare } from 'react-icons/fa';
 import ReelsContainer from '@/components/ReelsContainer';
 import GenerateReelForm from '@/components/GenerateReelForm';
 import useReels from '@/hooks/useReels';

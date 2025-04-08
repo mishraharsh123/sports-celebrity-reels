@@ -3,6 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import { FaHeart, FaRegHeart, FaEye, FaVolumeMute, FaVolumeUp, FaComment, FaShare, FaBookmark, FaRegBookmark, FaTimes } from 'react-icons/fa';
 import { VideoReel as VideoReelType } from '@/types';
+// import { colgroup } from 'framer-motion/client';
 
 interface VideoReelProps {
   reel: VideoReelType;
@@ -28,6 +29,9 @@ export default function VideoReel({ reel, isActive }: VideoReelProps) {
         videoRef.current.play().catch((error) => {
           console.error('Autoplay failed:', error);
         });
+        if(isPlaying){
+          console.log('Video is already playing');
+        }
         setIsPlaying(true);
       } else {
         videoRef.current.pause();
